@@ -18,3 +18,6 @@ I'm building this in public as part of learning network/infrastructure pentestin
 ## Status
 
 🟢 Currently: setting up a self-hosted AD lab (Windows Server + Windows 11 client) to practice as a sysadmin before moving into offensive enumeration and attacks.
+
+<img width="1408" height="768" alt="ActiveDirectoryforGithub" src="https://github.com/user-attachments/assets/6d1765f2-2a93-446e-ad80-217a0a760fb4" />
+
