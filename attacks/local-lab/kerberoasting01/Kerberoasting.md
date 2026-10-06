@@ -5,6 +5,9 @@
 ## What I did 1: 
 1. ran `ping <dc_ip>` : to test connectivity with the Domain Controller.
 2. ran `impacket-GetUserSPNs lab.local/username:'password' -dc-ip <dc_ip> -request` : the service account name was gotten but an error was returned (Kerberos SessionError: KDC_ERR_ETYPE_NOSUPP(KDC has no support for encryption type))
+
+<img width="1060" height="304" alt="error" src="https://github.com/user-attachments/assets/053783df-e6cb-4f14-852c-9a93c57458a1" />
+
 3. ran `sudo ntpdate <dc_ip>` to sync my attacking machine clock to the DC's clock. The issue still persists. 
 4. On my DC
    Navigated to Local Security Policy (secpol.msc) - Local Policies - Security options  to check for "Network security: Configure encryption types allowed for Kerberos". It is not defined, which was not the issue, because windows would fall back to the default encryption which includes AES and RC4.
@@ -36,6 +39,10 @@ This was after the above fix.
 3. The hash began with `$krb5tgs$23$`. The "23" shows it is a RC4 hash. 
 4. I saved the hash using a GUI text editor because `echo` command removed the `$krb5tgs$23$` from the hash, which would render the hash uncrackable by `hashcat`. 
 5. ran `hashcat -m 13100 svc.hash /usr/share/wordlists/rockyou.txt` to crack the hash and obtained the plaintext password: CHICKEN123!
+
+<img width="1715" height="470" alt="cracked" src="https://github.com/user-attachments/assets/18b246d4-5b61-4975-825d-cccb09cad623" />
+
+
    
 
 ## Lesson learnt:
