@@ -1,6 +1,6 @@
 # Kerberoasting
 
-- created a service account on my Domain Controller with a weak password. See [sysadmin notes](./syadmin-notes.md) for account creation and SPN registration steps.
+- created a service account on my Domain Controller with a weak password. See [sysadmin notes](./sysadmin-notes.md) for account creation and SPN registration steps.
 - I was provided with a valid username (m.jay) and password to perform kerberoasting.
 ## What I did 1: 
 1. ran `ping <dc_ip>` : to test connectivity with the Domain Controller.
